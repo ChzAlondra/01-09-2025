@@ -1,278 +1,116 @@
-{
-  "nbformat": 4,
-  "nbformat_minor": 0,
-  "metadata": {
-    "colab": {
-      "provenance": [],
-      "authorship_tag": "ABX9TyP9PEfW9fatCNXKGXLjpwxi"
-    },
-    "kernelspec": {
-      "name": "python3",
-      "display_name": "Python 3"
-    },
-    "language_info": {
-      "name": "python"
-    }
-  },
-  "cells": [
-    {
-      "cell_type": "code",
-      "execution_count": 2,
-      "metadata": {
-        "colab": {
-          "base_uri": "https://localhost:8080/"
-        },
-        "id": "OROPtbV5cmW-",
-        "outputId": "98ada689-522e-4626-8f01-edd16c251e8c"
-      },
-      "outputs": [
-        {
-          "output_type": "stream",
-          "name": "stdout",
-          "text": [
-            "\n",
-            "--- MENÚ ---\n",
-            "1. Verificar paréntesis balanceados\n",
-            "2. Convertir número decimal a binario\n",
-            "3. Editor de texto (con deshacer)\n",
-            "4. Salir\n",
-            "Elige una opción: 2\n",
-            "Ingresa un número decimal: 10\n",
-            "Binario: 1010\n",
-            "\n",
-            "--- MENÚ ---\n",
-            "1. Verificar paréntesis balanceados\n",
-            "2. Convertir número decimal a binario\n",
-            "3. Editor de texto (con deshacer)\n",
-            "4. Salir\n",
-            "Elige una opción: 2\n",
-            "Ingresa un número decimal: 5\n",
-            "Binario: 101\n",
-            "\n",
-            "--- MENÚ ---\n",
-            "1. Verificar paréntesis balanceados\n",
-            "2. Convertir número decimal a binario\n",
-            "3. Editor de texto (con deshacer)\n",
-            "4. Salir\n",
-            "Elige una opción: 2\n",
-            "Ingresa un número decimal: 9\n",
-            "Binario: 1001\n",
-            "\n",
-            "--- MENÚ ---\n",
-            "1. Verificar paréntesis balanceados\n",
-            "2. Convertir número decimal a binario\n",
-            "3. Editor de texto (con deshacer)\n",
-            "4. Salir\n",
-            "Elige una opción: 2\n",
-            "Ingresa un número decimal: 0\n",
-            "Binario: 0\n",
-            "\n",
-            "--- MENÚ ---\n",
-            "1. Verificar paréntesis balanceados\n",
-            "2. Convertir número decimal a binario\n",
-            "3. Editor de texto (con deshacer)\n",
-            "4. Salir\n",
-            "Elige una opción: 3\n",
-            "\n",
-            "--- EDITOR DE TEXTO ---\n",
-            "1. Escribir\n",
-            "2. Deshacer\n",
-            "3. Mostrar texto\n",
-            "4. Volver al menú principal\n",
-            "Elige una opción: 1\n",
-            "Escribe algo: Hola\n",
-            "\n",
-            "--- EDITOR DE TEXTO ---\n",
-            "1. Escribir\n",
-            "2. Deshacer\n",
-            "3. Mostrar texto\n",
-            "4. Volver al menú principal\n",
-            "Elige una opción: 2\n",
-            "Última acción deshecha.\n",
-            "\n",
-            "--- EDITOR DE TEXTO ---\n",
-            "1. Escribir\n",
-            "2. Deshacer\n",
-            "3. Mostrar texto\n",
-            "4. Volver al menú principal\n",
-            "Elige una opción: 1\n",
-            "Escribe algo: Perro\n",
-            "\n",
-            "--- EDITOR DE TEXTO ---\n",
-            "1. Escribir\n",
-            "2. Deshacer\n",
-            "3. Mostrar texto\n",
-            "4. Volver al menú principal\n",
-            "Elige una opción: 3\n",
-            "Texto actual: Perro\n",
-            "\n",
-            "--- EDITOR DE TEXTO ---\n",
-            "1. Escribir\n",
-            "2. Deshacer\n",
-            "3. Mostrar texto\n",
-            "4. Volver al menú principal\n",
-            "Elige una opción: 1\n",
-            "Escribe algo: Gato\n",
-            "\n",
-            "--- EDITOR DE TEXTO ---\n",
-            "1. Escribir\n",
-            "2. Deshacer\n",
-            "3. Mostrar texto\n",
-            "4. Volver al menú principal\n",
-            "Elige una opción: 3\n",
-            "Texto actual: PerroGato\n",
-            "\n",
-            "--- EDITOR DE TEXTO ---\n",
-            "1. Escribir\n",
-            "2. Deshacer\n",
-            "3. Mostrar texto\n",
-            "4. Volver al menú principal\n",
-            "Elige una opción: 2\n",
-            "Última acción deshecha.\n",
-            "\n",
-            "--- EDITOR DE TEXTO ---\n",
-            "1. Escribir\n",
-            "2. Deshacer\n",
-            "3. Mostrar texto\n",
-            "4. Volver al menú principal\n",
-            "Elige una opción: 3\n",
-            "Texto actual: Perro\n",
-            "\n",
-            "--- EDITOR DE TEXTO ---\n",
-            "1. Escribir\n",
-            "2. Deshacer\n",
-            "3. Mostrar texto\n",
-            "4. Volver al menú principal\n",
-            "Elige una opción: 4\n",
-            "\n",
-            "--- MENÚ ---\n",
-            "1. Verificar paréntesis balanceados\n",
-            "2. Convertir número decimal a binario\n",
-            "3. Editor de texto (con deshacer)\n",
-            "4. Salir\n",
-            "Elige una opción: 4\n",
-            "Saliendo del programa...\n"
-          ]
-        }
-      ],
-      "source": [
-        "class Pila:\n",
-        "    def __init__(self):\n",
-        "        self.items = []\n",
-        "\n",
-        "    def esta_vacia(self):\n",
-        "        return len(self.items) == 0\n",
-        "\n",
-        "    def apilar(self, item):\n",
-        "        self.items.append(item)\n",
-        "\n",
-        "    def desapilar(self):\n",
-        "        if not self.esta_vacia():\n",
-        "            return self.items.pop()\n",
-        "        return None\n",
-        "\n",
-        "\n",
-        "# ---------- 1. Paréntesis balanceados ----------\n",
-        "def parentesis_balanceados(expresion):\n",
-        "    pila = Pila()\n",
-        "    for caracter in expresion:\n",
-        "        if caracter == \"(\":\n",
-        "            pila.apilar(caracter)\n",
-        "        elif caracter == \")\":\n",
-        "            if pila.esta_vacia():\n",
-        "                return False\n",
-        "            pila.desapilar()\n",
-        "    return pila.esta_vacia()\n",
-        "\n",
-        "\n",
-        "# ---------- 2. Conversión decimal a binario ----------\n",
-        "def decimal_a_binario(numero):\n",
-        "    pila = Pila()\n",
-        "    if numero == 0:\n",
-        "        return \"0\"\n",
-        "    while numero > 0:\n",
-        "        pila.apilar(numero % 2)\n",
-        "        numero //= 2\n",
-        "    binario = \"\"\n",
-        "    while not pila.esta_vacia():\n",
-        "        binario += str(pila.desapilar())\n",
-        "    return binario\n",
-        "\n",
-        "\n",
-        "# ---------- 3. Editor de texto con Deshacer ----------\n",
-        "class EditorTexto:\n",
-        "    def __init__(self):\n",
-        "        self.texto = \"\"\n",
-        "        self.historial = Pila()\n",
-        "\n",
-        "    def escribir(self, nuevo_texto):\n",
-        "        self.historial.apilar(self.texto)  # Guardar estado actual\n",
-        "        self.texto += nuevo_texto\n",
-        "\n",
-        "    def deshacer(self):\n",
-        "        if not self.historial.esta_vacia():\n",
-        "            self.texto = self.historial.desapilar()\n",
-        "\n",
-        "    def mostrar(self):\n",
-        "        print(\"Texto actual:\", self.texto)\n",
-        "\n",
-        "\n",
-        "# ---------- Menú principal ----------\n",
-        "def menu():\n",
-        "    while True:\n",
-        "        print(\"\\n--- MENÚ ---\")\n",
-        "        print(\"1. Verificar paréntesis balanceados\")\n",
-        "        print(\"2. Convertir número decimal a binario\")\n",
-        "        print(\"3. Editor de texto (con deshacer)\")\n",
-        "        print(\"4. Salir\")\n",
-        "\n",
-        "        opcion = input(\"Elige una opción: \")\n",
-        "\n",
-        "        if opcion == \"1\":\n",
-        "            expresion = input(\"Ingresa una expresión matemática: \")\n",
-        "            if parentesis_balanceados(expresion):\n",
-        "                print(\"✅ Los paréntesis están balanceados\")\n",
-        "            else:\n",
-        "                print(\"❌ Los paréntesis NO están balanceados\")\n",
-        "\n",
-        "        elif opcion == \"2\":\n",
-        "            numero = int(input(\"Ingresa un número decimal: \"))\n",
-        "            print(\"Binario:\", decimal_a_binario(numero))\n",
-        "\n",
-        "        elif opcion == \"3\":\n",
-        "            editor = EditorTexto()\n",
-        "            while True:\n",
-        "                print(\"\\n--- EDITOR DE TEXTO ---\")\n",
-        "                print(\"1. Escribir\")\n",
-        "                print(\"2. Deshacer\")\n",
-        "                print(\"3. Mostrar texto\")\n",
-        "                print(\"4. Volver al menú principal\")\n",
-        "                subopcion = input(\"Elige una opción: \")\n",
-        "\n",
-        "                if subopcion == \"1\":\n",
-        "                    nuevo = input(\"Escribe algo: \")\n",
-        "                    editor.escribir(nuevo)\n",
-        "                elif subopcion == \"2\":\n",
-        "                    editor.deshacer()\n",
-        "                    print(\"Última acción deshecha.\")\n",
-        "                elif subopcion == \"3\":\n",
-        "                    editor.mostrar()\n",
-        "                elif subopcion == \"4\":\n",
-        "                    break\n",
-        "                else:\n",
-        "                    print(\"Opción inválida.\")\n",
-        "\n",
-        "        elif opcion == \"4\":\n",
-        "            print(\"Saliendo del programa...\")\n",
-        "            break\n",
-        "\n",
-        "        else:\n",
-        "            print(\"Opción inválida, intenta de nuevo.\")\n",
-        "\n",
-        "\n",
-        "# Ejecutar menú\n",
-        "menu()\n"
-      ]
-    }
-  ]
-}
+class Pila:
+    def __init__(self):
+        self.items = []
+
+    def esta_vacia(self):
+        return len(self.items) == 0
+
+    def apilar(self, item):
+        self.items.append(item)
+
+    def desapilar(self):
+        if not self.esta_vacia():
+            return self.items.pop()
+        return None
+
+
+# ---------- 1. Paréntesis balanceados ----------
+def parentesis_balanceados(expresion):
+    pila = Pila()
+    for caracter in expresion:
+        if caracter == "(":
+            pila.apilar(caracter)
+        elif caracter == ")":
+            if pila.esta_vacia():
+                return False
+            pila.desapilar()
+    return pila.esta_vacia()
+
+
+# ---------- 2. Conversión decimal a binario ----------
+def decimal_a_binario(numero):
+    pila = Pila()
+    if numero == 0:
+        return "0"
+    while numero > 0:
+        pila.apilar(numero % 2)
+        numero //= 2
+    binario = ""
+    while not pila.esta_vacia():
+        binario += str(pila.desapilar())
+    return binario
+
+
+# ---------- 3. Editor de texto con Deshacer ----------
+class EditorTexto:
+    def __init__(self):
+        self.texto = ""
+        self.historial = Pila()
+
+    def escribir(self, nuevo_texto):
+        self.historial.apilar(self.texto)  # Guardar estado actual
+        self.texto += nuevo_texto
+
+    def deshacer(self):
+        if not self.historial.esta_vacia():
+            self.texto = self.historial.desapilar()
+
+    def mostrar(self):
+        print("Texto actual:", self.texto)
+
+
+# ---------- Menú principal ----------
+def menu():
+    while True:
+        print("\n--- MENÚ ---")
+        print("1. Verificar paréntesis balanceados")
+        print("2. Convertir número decimal a binario")
+        print("3. Editor de texto (con deshacer)")
+        print("4. Salir")
+
+        opcion = input("Elige una opción: ")
+
+        if opcion == "1":
+            expresion = input("Ingresa una expresión matemática: ")
+            if parentesis_balanceados(expresion):
+                print("✅ Los paréntesis están balanceados")
+            else:
+                print("❌ Los paréntesis NO están balanceados")
+
+        elif opcion == "2":
+            numero = int(input("Ingresa un número decimal: "))
+            print("Binario:", decimal_a_binario(numero))
+
+        elif opcion == "3":
+            editor = EditorTexto()
+            while True:
+                print("\n--- EDITOR DE TEXTO ---")
+                print("1. Escribir")
+                print("2. Deshacer")
+                print("3. Mostrar texto")
+                print("4. Volver al menú principal")
+                subopcion = input("Elige una opción: ")
+
+                if subopcion == "1":
+                    nuevo = input("Escribe algo: ")
+                    editor.escribir(nuevo)
+                elif subopcion == "2":
+                    editor.deshacer()
+                    print("Última acción deshecha.")
+                elif subopcion == "3":
+                    editor.mostrar()
+                elif subopcion == "4":
+                    break
+                else:
+                    print("Opción inválida.")
+
+        elif opcion == "4":
+            print("Saliendo del programa...")
+            break
+
+        else:
+            print("Opción inválida, intenta de nuevo.")
+
+
+# Ejecutar menú
+menu()
