@@ -8,15 +8,14 @@ class ColaCircular:
         self.indice = (self.indice + 1) % len(self.jugadores)
         return jugador
 
-
 def juego_turnos():
     jugadores = input("Ingresa los nombres de los jugadores separados por coma: ").split(",")
     jugadores = [j.strip() for j in jugadores]
     cola = ColaCircular(jugadores)
 
-    while True:
-        input("\nPresiona ENTER para siguiente turno (o escribe 'salir' para terminar)...")
+    x = "s" 
+    while x == "s" or x=="S":
         print(f"Turno de: {cola.siguiente_turno()}")
-
+        x = input("\nEscribe 's' para siguiente turno o cualquier otro caracter para terminar: ").strip().lower()
 
 juego_turnos()
